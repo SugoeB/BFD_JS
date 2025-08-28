@@ -9,7 +9,7 @@ const iniciar = () => {
   rl.question('Quantas notas deseja inserir? ', (resposta) => {
     const qtdNotas = parseInt(resposta);
     if (isNaN(qtdNotas) || qtdNotas <= 0) {
-      console.log('❌ Por favor, insira um número válido maior que zero.\n');
+      console.log('Por favor, insira um número válido maior que zero.\n');
       return iniciar();
     }
 
@@ -19,7 +19,7 @@ const iniciar = () => {
         rl.question(`Digite a nota ${indice + 1}: `, (nota) => {
           const notaConvertida = parseFloat(nota.replace(',', '.'));
           if (isNaN(notaConvertida)) {
-            console.log('❌ Nota inválida. Tente novamente.\n');
+            console.log('Nota inválida. Tente novamente.\n');
             return lerNota(indice);
           }
           notas.push(notaConvertida);
@@ -44,7 +44,7 @@ const iniciar = () => {
               console.log('\n Reiniciando...\n');
               iniciar();
             } else if (escolha === '2') {
-              console.log('\n👋 Encerrando. Até a próxima!');
+              console.log('\nEncerrando. Até a próxima!');
               rl.close();
             } else {
               console.log('\n Opção inválida. Digite 1 para continuar ou 2 para encerrar.');
